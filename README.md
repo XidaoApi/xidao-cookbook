@@ -1,21 +1,40 @@
 # XiDao Cookbook
 
-Practical migration guides and cost-optimization patterns for teams using an OpenAI-compatible AI API.
+Practical migration guides and production patterns for teams using an OpenAI-compatible AI API.
+
+## Why this repo exists
+
+Most AI integration content stops at the first successful request.
+Production teams usually need help with harder problems:
+- safe provider switching
+- phased rollout and regression testing
+- fallback and routing strategy
+- cost control by workload
+- observability when traffic spans multiple model options
+
+This cookbook focuses on those higher-intent, production-facing problems first.
 
 ## Sections
 
-### 1. Migration
+### 1. Migration and rollout
 - switch from OpenAI API with minimal code changes
-- keep SDK workflows and only replace endpoint configuration
-- use rollout checklists before moving real production traffic
+- verify which SDK assumptions your app depends on
+- run rollout checklists before moving real production traffic
+- separate output-quality risk from integration-risk during migration
 
-### 2. Cost optimization
+### 2. Reliability and routing
+- fallback versus blind retry behavior
+- health-aware routing patterns
+- latency-tier and task-tier model selection
+- staged rollout patterns that reduce outage blast radius
+
+### 3. Cost optimization
 - prompt trimming
 - model routing by task value
-- fallback strategy
 - caching repeated requests
+- token and request visibility for cost analysis
 
-### 3. Framework examples
+### 4. Framework examples
 - Python OpenAI SDK
 - Node.js OpenAI SDK
 - LangChain-ready notes
@@ -23,15 +42,17 @@ Practical migration guides and cost-optimization patterns for teams using an Ope
 
 ## Recommended first documents
 - `guides/migrate-from-openai.md`
+- `guides/openai-compatible-rollout-checklist.md`
 - `guides/reduce-api-costs.md`
 - `guides/openrouter-alternative.md`
-- `guides/openai-compatible-rollout-checklist.md`
+- `guides/llm-failover-routing-patterns.md`
+- `guides/vercel-ai-sdk-openai-compatible.md`
 
-## Why these guides exist
-
-Teams usually do not struggle with the first API call.
-They struggle with safe migration, cost control, and production behavior across model options.
-This cookbook focuses on those practical problems first.
+## Repo relationship map
+- `xidao-python-examples` → minimal Python usage examples
+- `xidao-nodejs-examples` → minimal Node.js usage examples
+- `llm-failover-router-demo` → code-first reliability and routing examples
+- `xidao-cookbook` → migration, rollout, routing, and cost guides
 
 ## Links
 - Website: https://global.xidao.online/
