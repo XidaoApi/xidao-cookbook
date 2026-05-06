@@ -1,5 +1,9 @@
 # XiDao Cookbook
 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![GitHub release](https://img.shields.io/github/v/release/XidaoApi/xidao-cookbook)](https://github.com/XidaoApi/xidao-cookbook/releases) [![GitHub stars](https://img.shields.io/github/stars/XidaoApi/xidao-cookbook?style=social)](https://github.com/XidaoApi/xidao-cookbook/stargazers)
+
+
 Practical migration guides and production patterns for teams using an OpenAI-compatible AI API.
 
 ## Why this repo exists
